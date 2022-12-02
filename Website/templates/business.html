@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{%block content%}
+<div id =wrapper>
+   
+  <div class="container-fluid">
+    <div class="row content mt-4">
+      <div class="col-sm-3 sidenav ">
+        {% include 'bus_nev.html' %}
+
+      </div>
+  
+      <div class="col-sm-9">
+        <h4><small>RECENT Prediction</small></h4>
+        <table id="data" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Store Area</th>
+              <th>Items Available</th>
+              <th>Customer count</th>
+              <th>sale_prediction</th>
+            </tr>
+          </thead>
+          <tbody>
+        {% for pre in user.Prediction %}
+        <tr>
+        <td >{{pre.name}}</td>
+        <td >{{pre.Store_Area}}</td>
+        <td >{{pre.Items_Available}}</td>
+        <td >{{pre.Customer_count}}</td>
+        <td >{{pre.sale_prediction}}</td>
+        <td >{{pre.date_created}}</td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+        
+      </div>
+      </div>
+    
+    
+    </div>
+    
+  </div>
+</div>
+  <footer class="container-fluid">
+    <p>Footer Text</p>
+  </footer>
+  
+  </body>
+  
+
+{% endblock %}
