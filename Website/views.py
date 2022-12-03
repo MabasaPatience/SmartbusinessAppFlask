@@ -23,7 +23,7 @@ def add_post():
     db.session.commit()
 
     return  render_template('home.html',user=current_user)
-
+#####
 @views.route('/business')
 def business():
    return render_template('business.html',user=current_user)
